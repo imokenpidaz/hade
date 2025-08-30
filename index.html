@@ -82,9 +82,11 @@
       transform: scale(1.1);
     }
 
+    /* 白黒アイコン */
     .links img {
       width: 24px;
       height: 24px;
+      filter: grayscale(100%) brightness(200%);
     }
   </style>
 </head>
@@ -133,4 +135,140 @@
   </script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>My Cool Profile</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: black;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: sans-serif;
+      color: white;
+    }
 
+    h1 {
+      z-index: 1;
+      text-shadow: 0 0 10px #fff, 0 0 20px #0ff;
+      margin-bottom: 20px;
+    }
+
+    /* 星 */
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: twinkle 2s infinite ease-in-out;
+    }
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 1; }
+    }
+
+    /* 流れ星 */
+    .shooting-star {
+      position: absolute;
+      width: 150px;
+      height: 2px;
+      background: linear-gradient(90deg, white, transparent);
+      opacity: 0.8;
+      transform: rotate(45deg);
+      animation: shoot 2s linear infinite;
+    }
+    @keyframes shoot {
+      0% { transform: translateX(-200px) translateY(-200px) rotate(45deg); opacity: 0; }
+      10% { opacity: 1; }
+      100% { transform: translateX(800px) translateY(800px) rotate(45deg); opacity: 0; }
+    }
+
+    /* 光るリンクボタン */
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      z-index: 1;
+    }
+    .links a {
+      padding: 15px 30px;
+      border-radius: 30px;
+      background: rgba(255,255,255,0.1);
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      box-shadow: 0 0 15px rgba(255,255,255,0.3);
+      transition: 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .links a:hover {
+      background: white;
+      color: black;
+      box-shadow: 0 0 20px #fff, 0 0 40px #ff00de, 0 0 60px #00cfff;
+      transform: scale(1.1);
+    }
+
+    /* 白黒アイコン */
+    .links img {
+      width: 24px;
+      height: 24px;
+      filter: grayscale(100%) brightness(200%);
+    }
+  </style>
+</head>
+<body>
+  <h1>🌌 My Cool Profile 🌌</h1>
+
+  <div class="links">
+    <a href="https://twitter.com/">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/twitter.svg" alt="Twitter">
+      Twitter
+    </a>
+    <a href="https://instagram.com/">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" alt="Instagram">
+      Instagram
+    </a>
+    <a href="https://tiktok.com/">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/tiktok.svg" alt="TikTok">
+      TikTok
+    </a>
+    <a href="https://youtube.com/">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/youtube.svg" alt="YouTube">
+      YouTube
+    </a>
+  </div>
+
+  <script>
+    // 星の生成
+    for (let i = 0; i < 150; i++) {
+      let star = document.createElement("div");
+      star.className = "star";
+      star.style.top = Math.random() * window.innerHeight + "px";
+      star.style.left = Math.random() * window.innerWidth + "px";
+      star.style.animationDuration = (1 + Math.random() * 3) + "s";
+      document.body.appendChild(star);
+    }
+
+    // 流れ星
+    setInterval(() => {
+      let shootingStar = document.createElement("div");
+      shootingStar.className = "shooting-star";
+      shootingStar.style.top = Math.random() * window.innerHeight/2 + "px";
+      shootingStar.style.left = Math.random() * window.innerWidth/2 + "px";
+      document.body.appendChild(shootingStar);
+      setTimeout(() => shootingStar.remove(), 2000);
+    }, 3000);
+  </script>
+</body>
+</html>
