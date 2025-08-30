@@ -70,6 +70,10 @@
       font-size: 18px;
       box-shadow: 0 0 15px rgba(255,255,255,0.3);
       transition: 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
     }
     .links a:hover {
       background: white;
@@ -77,16 +81,33 @@
       box-shadow: 0 0 20px #fff, 0 0 40px #ff00de, 0 0 60px #00cfff;
       transform: scale(1.1);
     }
+
+    .links img {
+      width: 24px;
+      height: 24px;
+    }
   </style>
 </head>
 <body>
   <h1>🌌 My Cool Profile 🌌</h1>
 
   <div class="links">
-    <a href="https://twitter.com/">🐦 Twitter</a>
-    <a href="https://instagram.com/">📸 Instagram</a>
-    <a href="https://tiktok.com/">🎵 TikTok</a>
-    <a href="https://youtube.com/">▶ YouTube</a>
+    <a href="https://twitter.com/">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/twitter.svg" alt="Twitter">
+      Twitter
+    </a>
+    <a href="https://instagram.com/">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" alt="Instagram">
+      Instagram
+    </a>
+    <a href="https://tiktok.com/">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/tiktok.svg" alt="TikTok">
+      TikTok
+    </a>
+    <a href="https://youtube.com/">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/youtube.svg" alt="YouTube">
+      YouTube
+    </a>
   </div>
 
   <script>
