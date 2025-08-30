@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>My Profile</title>
+  <style>
+    /* 背景アニメーション */
+    body {
+      margin: 0;
+      font-family: "Arial", sans-serif;
+      color: white;
+      text-align: center;
+      overflow: hidden;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(270deg, #ff0080, #7928ca, #2afadf, #ff0080);
+      background-size: 800% 800%;
+      animation: bgAnimation 15s ease infinite;
+    }
+    @keyframes bgAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* プロフィール */
+    .profile img {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      border: 4px solid white;
+      margin-bottom: 15px;
+    }
+    h1 { margin: 0; font-size: 28px; }
+    p { margin: 5px 0 20px; }
+
+    /* 光るボタン */
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .links a {
+      padding: 15px 25px;
+      border-radius: 30px;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      font-size: 18px;
+      text-decoration: none;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+      transition: 0.3s;
+    }
+    .links a:hover {
+      background: white;
+      color: black;
+      box-shadow: 0 0 20px #fff, 0 0 40px #ff00de, 0 0 60px #00cfff;
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <div class="profile">
+      <img src="https://via.placeholder.com/130" alt="Profile">
+      <h1>あなたの名前</h1>
+      <p>🔥 派手に自己紹介 🔥</p>
+    </div>
+    <div class="links">
+      <a href="https://twitter.com/">🐦 Twitter</a>
+      <a href="https://instagram.com/">📸 Instagram</a>
+      <a href="https://tiktok.com/">🎵 TikTok</a>
+      <a href="https://youtube.com/">▶ YouTube</a>
+    </div>
+  </div>
+</body>
+</html>
